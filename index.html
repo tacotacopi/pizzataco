@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PizzaTaco</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #e0f7ff 0%, #87CEEB 100%);
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            position: relative;
+        }
+
+        .cloud {
+            position: absolute;
+            background: linear-gradient(to bottom right, 
+                rgba(255, 255, 255, 0.95) 0%,
+                rgba(255, 255, 255, 0.85) 100%);
+            border-radius: 50px;
+            box-shadow: 
+                inset -5px -5px 15px rgba(255, 255, 255, 0.5),
+                inset 5px 5px 15px rgba(0, 0, 0, 0.1);
+            animation: float 20s infinite linear;
+        }
+
+        .cloud:nth-child(1) {
+            width: 180px;
+            height: 60px;
+            top: 20%;
+            left: 20%;
+            animation-duration: 23s;
+        }
+
+        .cloud:nth-child(2) {
+            width: 240px;
+            height: 80px;
+            top: 60%;
+            left: 70%;
+            animation-duration: 17s;
+        }
+
+        .cloud:nth-child(3) {
+            width: 160px;
+            height: 50px;
+            top: 40%;
+            left: 40%;
+            animation-duration: 21s;
+        }
+
+        .cloud:nth-child(4) {
+            width: 200px;
+            height: 70px;
+            top: 75%;
+            left: 30%;
+            animation-duration: 19s;
+        }
+
+        .cloud:before,
+        .cloud:after {
+            content: '';
+            position: absolute;
+            background: inherit;
+            box-shadow: inherit;
+        }
+
+        .cloud:before {
+            width: 110px;
+            height: 110px;
+            top: -50px;
+            left: 25%;
+            border-radius: 50%;
+        }
+
+        .cloud:after {
+            width: 140px;
+            height: 140px;
+            top: -70px;
+            right: 25%;
+            border-radius: 50%;
+        }
+
+        .title {
+            display: flex;
+            gap: 0.2em;
+            z-index: 1;
+        }
+
+        .letter {
+            font-size: 5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+            animation: floatLetter 5s ease-in-out infinite;
+        }
+
+        .letter:nth-child(2n) {
+            animation-duration: 5.5s;
+        }
+
+        .letter:nth-child(3n) {
+            animation-duration: 6s;
+        }
+
+        .letter:nth-child(4n) {
+            animation-duration: 6.5s;
+        }
+
+        .progress-text {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-15px) rotate(2deg);
+            }
+            50% {
+                transform: translateY(0px) rotate(4deg);
+            }
+            75% {
+                transform: translateY(15px) rotate(2deg);
+            }
+        }
+
+        @keyframes floatLetter {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud" style="width: 200px; height: 65px; top: 50%; left: 5%; animation-duration: 25s;"></div>
+    <div class="title">
+        <span class="letter">P</span>
+        <span class="letter">i</span>
+        <span class="letter">z</span>
+        <span class="letter">z</span>
+        <span class="letter">a</span>
+        <span class="letter">T</span>
+        <span class="letter">a</span>
+        <span class="letter">c</span>
+        <span class="letter">o</span>
+    </div>
+    <div class="progress-text">Project in progress</div>
+</body>
+</html>
